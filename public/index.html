@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDK Construct Analyzer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Analyzing package...</p>
+    </div>
+
+    <div id="error" class="hidden error-message"></div>
+
+    <div id="results" class="hidden">
+      <div class="package-info">
+        <h2 id="packageName"></h2>
+        <p id="version"></p>
+      </div>
+
+      <div class="score-section total-section">
+        <h3>Total Score</h3>
+        <div id="totalScoreContainer"></div>
+      </div>
+
+      <div class="score-section">
+        <h3>Pillar Scores</h3>
+        <div id="pillarScores"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
