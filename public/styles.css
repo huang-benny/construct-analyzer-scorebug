@@ -72,8 +72,13 @@ h3 {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .error-message {
@@ -145,10 +150,16 @@ h3 {
   padding: 10px 8px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  position: relative;
 }
 
 .pillar-item:hover {
   background-color: #4a5f7f;
+}
+
+.pillar-item:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 .pillar-item:last-child {
@@ -196,4 +207,47 @@ h3 {
   text-transform: capitalize;
   font-size: 13px;
   flex: 1;
+}
+
+.tooltip {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 12px;
+  background: #232f3e;
+  border: 1px solid #4a5f7f;
+  border-radius: 4px;
+  padding: 12px;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.signal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #4a5f7f;
+  font-size: 11px;
+}
+
+.signal-row:last-child {
+  border-bottom: none;
+}
+
+.signal-name {
+  color: #aab7c4;
+  font-weight: 500;
+}
+
+.signal-score {
+  color: #ffffff;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 12px;
 }
